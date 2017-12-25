@@ -37,13 +37,10 @@ public class Lunar {
 	};
 
 	public Lunar(Date date) throws ParseException {
-		int yearCyl, monCyl, dayCyl;
 		int leapMonth = 0;
 		Date baseDate = null;
 		baseDate = new Date(1900, 1, 31, 0, 0, 0);
 		int offset = (int) (date.getOffset(baseDate));
-		dayCyl = offset + 40;
-		monCyl = 14;
 		// 用offset减去每农历年的天数
 		// 计算当天是农历第几天
 		// i最终结果是农历的年份
@@ -52,16 +49,13 @@ public class Lunar {
 		for (iYear = 1900; iYear < lunarInfo.length + 1900 && offset > 0; iYear++) {
 			daysOfYear = yearDays(iYear);
 			offset -= daysOfYear;
-			monCyl += 12;
 		}
 		if (offset < 0) {
 			offset += daysOfYear;
 			iYear--;
-			monCyl -= 12;
 		}
 		// 农历年份
 		year = iYear;
-		yearCyl = iYear - 1864;
 		leapMonth = leapMonth(iYear); // 闰哪个月,1-12
 		isLeap = false;
 		// 用当年的天数offset,逐个减去每月（农历）的天数，求出当天是本月的第几天
@@ -78,8 +72,8 @@ public class Lunar {
 			// 解除闰月
 			if (isLeap && iMonth == (leapMonth + 1))
 				isLeap = false;
-			if (!isLeap)
-				monCyl++;
+			if (!isLeap) {
+			}
 		}
 		// offset为0时，并且刚才计算的月份是闰月，要校正
 		if (offset == 0 && leapMonth > 0 && iMonth == leapMonth + 1) {
@@ -88,14 +82,12 @@ public class Lunar {
 			} else {
 				isLeap = true;
 				--iMonth;
-				--monCyl;
 			}
 		}
 		// offset小于0时，也要校正
 		if (offset < 0) {
 			offset += daysOfMonth;
 			--iMonth;
-			--monCyl;
 		}
 		month = iMonth;
 		day = offset + 1;
