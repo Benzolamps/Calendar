@@ -1,4 +1,4 @@
-import java.util.HashMap;
+Ôªøimport java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,59 +8,59 @@ import java.util.Map;
  */
 public class SolarTerm {
 	private static final double D = 0.2422;
-	private final static Map<String, Integer[]> INCREASE_OFFSETMAP = new HashMap<String, Integer[]>();// +1∆´“∆
-	private final static Map<String, Integer[]> DECREASE_OFFSETMAP = new HashMap<String, Integer[]>();// -1∆´“∆
+	private final static Map<String, Integer[]> INCREASE_OFFSETMAP = new HashMap<String, Integer[]>();// +1ÂÅèÁßª
+	private final static Map<String, Integer[]> DECREASE_OFFSETMAP = new HashMap<String, Integer[]>();// -1ÂÅèÁßª
 
-	/** 24Ω⁄∆¯ **/
+	/** 24ËäÇÊ∞î **/
 	private static enum SolarTermsEnum {
-		LICHUN, // ¡¢¥∫
-		YUSHUI, // ”ÍÀÆ
-		JINGZHE, // æ™’›
-		CHUNFEN, // ¥∫∑÷
-		QINGMING, // «Â√˜
-		GUYU, // π»”Í
-		LIXIA, // ¡¢œƒ
-		XIAOMAN, // –°¬˙
-		MANGZHONG, // √¢÷÷
-		XIAZHI, // œƒ÷¡
-		XIAOSHU, // –° Ó
-		DASHU, // ¥Û Ó
-		LIQIU, // ¡¢«Ô
-		CHUSHU, // ¥¶ Ó
-		BAILU, // ∞◊¬∂
-		QIUFEN, // «Ô∑÷
-		HANLU, // ∫Æ¬∂
-		SHUANGJIANG, // À™Ωµ
-		LIDONG, // ¡¢∂¨
-		XIAOXUE, // –°—©
-		DAXUE, // ¥Û—©
-		DONGZHI, // ∂¨÷¡
-		XIAOHAN, // –°∫Æ
-		DAHAN;// ¥Û∫Æ
+		LICHUN, // Á´ãÊò•
+		YUSHUI, // Èõ®Ê∞¥
+		JINGZHE, // ÊÉäËõ∞
+		CHUNFEN, // Êò•ÂàÜ
+		QINGMING, // Ê∏ÖÊòé
+		GUYU, // Ë∞∑Èõ®
+		LIXIA, // Á´ãÂ§è
+		XIAOMAN, // Â∞èÊª°
+		MANGZHONG, // ËäíÁßç
+		XIAZHI, // Â§èËá≥
+		XIAOSHU, // Â∞èÊöë
+		DASHU, // Â§ßÊöë
+		LIQIU, // Á´ãÁßã
+		CHUSHU, // Â§ÑÊöë
+		BAILU, // ÁôΩÈú≤
+		QIUFEN, // ÁßãÂàÜ
+		HANLU, // ÂØíÈú≤
+		SHUANGJIANG, // ÈúúÈôç
+		LIDONG, // Á´ãÂÜ¨
+		XIAOXUE, // Â∞èÈõ™
+		DAXUE, // Â§ßÈõ™
+		DONGZHI, // ÂÜ¨Ëá≥
+		XIAOHAN, // Â∞èÂØí
+		DAHAN;// Â§ßÂØí
 	}
 
 	static {
-		DECREASE_OFFSETMAP.put(SolarTermsEnum.YUSHUI.name(), new Integer[] { 2026 });// ”ÍÀÆ
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.CHUNFEN.name(), new Integer[] { 2084 });// ¥∫∑÷
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOMAN.name(), new Integer[] { 2008 });// –°¬˙
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.MANGZHONG.name(), new Integer[] { 1902 });// √¢÷÷
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAZHI.name(), new Integer[] { 1928 });// œƒ÷¡
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOSHU.name(), new Integer[] { 1925, 2016 });// –° Ó
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.DASHU.name(), new Integer[] { 1922 });// ¥Û Ó
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.LIQIU.name(), new Integer[] { 2002 });// ¡¢«Ô
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.BAILU.name(), new Integer[] { 1927 });// ∞◊¬∂
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.QIUFEN.name(), new Integer[] { 1942 });// «Ô∑÷
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.SHUANGJIANG.name(), new Integer[] { 2089 });// À™Ωµ
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.LIDONG.name(), new Integer[] { 2089 });// ¡¢∂¨
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOXUE.name(), new Integer[] { 1978 });// –°—©
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.DAXUE.name(), new Integer[] { 1954 });// ¥Û—©
-		DECREASE_OFFSETMAP.put(SolarTermsEnum.DONGZHI.name(), new Integer[] { 1918, 2021 });// ∂¨÷¡
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOHAN.name(), new Integer[] { 1982 });// –°∫Æ
-		DECREASE_OFFSETMAP.put(SolarTermsEnum.XIAOHAN.name(), new Integer[] { 2019 });// –°∫Æ
-		INCREASE_OFFSETMAP.put(SolarTermsEnum.DAHAN.name(), new Integer[] { 2082 });// ¥Û∫Æ
+		DECREASE_OFFSETMAP.put(SolarTermsEnum.YUSHUI.name(), new Integer[] { 2026 });// Èõ®Ê∞¥
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.CHUNFEN.name(), new Integer[] { 2084 });// Êò•ÂàÜ
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOMAN.name(), new Integer[] { 2008 });// Â∞èÊª°
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.MANGZHONG.name(), new Integer[] { 1902 });// ËäíÁßç
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAZHI.name(), new Integer[] { 1928 });// Â§èËá≥
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOSHU.name(), new Integer[] { 1925, 2016 });// Â∞èÊöë
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.DASHU.name(), new Integer[] { 1922 });// Â§ßÊöë
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.LIQIU.name(), new Integer[] { 2002 });// Á´ãÁßã
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.BAILU.name(), new Integer[] { 1927 });// ÁôΩÈú≤
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.QIUFEN.name(), new Integer[] { 1942 });// ÁßãÂàÜ
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.SHUANGJIANG.name(), new Integer[] { 2089 });// ÈúúÈôç
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.LIDONG.name(), new Integer[] { 2089 });// Á´ãÂÜ¨
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOXUE.name(), new Integer[] { 1978 });// Â∞èÈõ™
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.DAXUE.name(), new Integer[] { 1954 });// Â§ßÈõ™
+		DECREASE_OFFSETMAP.put(SolarTermsEnum.DONGZHI.name(), new Integer[] { 1918, 2021 });// ÂÜ¨Ëá≥
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.XIAOHAN.name(), new Integer[] { 1982 });// Â∞èÂØí
+		DECREASE_OFFSETMAP.put(SolarTermsEnum.XIAOHAN.name(), new Integer[] { 2019 });// Â∞èÂØí
+		INCREASE_OFFSETMAP.put(SolarTermsEnum.DAHAN.name(), new Integer[] { 2082 });// Â§ßÂØí
 	}
 
-	// ∂®“Â“ª∏ˆ∂˛Œ¨ ˝◊È£¨µ⁄“ªŒ¨ ˝◊È¥Ê¥¢µƒ «20 ¿ºÕµƒΩ⁄∆¯C÷µ£¨µ⁄∂˛Œ¨ ˝◊È¥Ê¥¢µƒ «21 ¿ºÕµƒΩ⁄∆¯C÷µ,0µΩ23∏ˆ£¨“¿¥Œ¥˙±Ì¡¢¥∫°¢”ÍÀÆ...¥Û∫ÆΩ⁄∆¯µƒC÷µ
+	// ÂÆö‰πâ‰∏Ä‰∏™‰∫åÁª¥Êï∞ÁªÑÔºåÁ¨¨‰∏ÄÁª¥Êï∞ÁªÑÂ≠òÂÇ®ÁöÑÊòØ20‰∏ñÁ∫™ÁöÑËäÇÊ∞îCÂÄºÔºåÁ¨¨‰∫åÁª¥Êï∞ÁªÑÂ≠òÂÇ®ÁöÑÊòØ21‰∏ñÁ∫™ÁöÑËäÇÊ∞îCÂÄº,0Âà∞23‰∏™Ôºå‰æùÊ¨°‰ª£Ë°®Á´ãÊò•„ÄÅÈõ®Ê∞¥...Â§ßÂØíËäÇÊ∞îÁöÑCÂÄº
 	private static final double[][] CENTURY_ARRAY = {
 			{ 4.6295, 19.4599, 6.3826, 21.4155, 5.59, 20.888, 6.318, 21.86, 6.5, 22.2, 7.928, 23.65, 8.35, 23.95, 8.44,
 					23.822, 9.098, 24.218, 8.218, 23.08, 7.9, 22.6, 6.11, 20.84 },
@@ -70,49 +70,49 @@ public class SolarTerm {
 	/**
 	 * 
 	 * @param year
-	 *            ƒÍ∑›
+	 *            Âπ¥‰ªΩ
 	 * @param name
-	 *            Ω⁄∆¯µƒ√˚≥∆
-	 * @return ∑µªÿΩ⁄∆¯ «œ‡”¶‘¬∑›µƒµ⁄º∏ÃÏ
+	 *            ËäÇÊ∞îÁöÑÂêçÁß∞
+	 * @return ËøîÂõûËäÇÊ∞îÊòØÁõ∏Â∫îÊúà‰ªΩÁöÑÁ¨¨Âá†Â§©
 	 */
 	public static int getSolarTermNum(int year, String name) {
-		double centuryValue = 0;// Ω⁄∆¯µƒ ¿ºÕ÷µ£¨√ø∏ˆΩ⁄∆¯µƒ√ø∏ˆ ¿ºÕ÷µ∂º≤ªÕ¨
+		double centuryValue = 0;// ËäÇÊ∞îÁöÑ‰∏ñÁ∫™ÂÄºÔºåÊØè‰∏™ËäÇÊ∞îÁöÑÊØè‰∏™‰∏ñÁ∫™ÂÄºÈÉΩ‰∏çÂêå
 		name = name.trim().toUpperCase();
 		int ordinal = SolarTermsEnum.valueOf(name).ordinal();
 		int centuryIndex = -1;
-		if (year >= 1901 && year <= 2000) {// 20 ¿ºÕ
+		if (year >= 1901 && year <= 2000) {// 20‰∏ñÁ∫™
 			centuryIndex = 0;
-		} else if (year >= 2001 && year <= 2100) {// 21 ¿ºÕ
+		} else if (year >= 2001 && year <= 2100) {// 21‰∏ñÁ∫™
 			centuryIndex = 1;
 		} else {
-			throw new RuntimeException("≤ª÷ß≥÷¥ÀƒÍ∑›£∫" + year + "£¨ƒø«∞÷ª÷ß≥÷1901ƒÍµΩ2100ƒÍµƒ ±º‰∑∂Œß");
+			throw new RuntimeException("‰∏çÊîØÊåÅÊ≠§Âπ¥‰ªΩÔºö" + year + "ÔºåÁõÆÂâçÂè™ÊîØÊåÅ1901Âπ¥Âà∞2100Âπ¥ÁöÑÊó∂Èó¥ËåÉÂõ¥");
 		}
 		centuryValue = CENTURY_ARRAY[centuryIndex][ordinal];
 		int dateNum = 0;
 		/**
-		 * º∆À„ num =[Y*D+C]-L’‚ «¥´Àµ÷–µƒ Ÿ–«Õ®”√π´ Ω π´ ΩΩ‚∂¡£∫ƒÍ ˝µƒ∫Û2Œª≥À0.2422º”C(º¥£∫centuryValue)»°’˚ ˝∫Û£¨ºı»ÚƒÍ ˝
+		 * ËÆ°ÁÆó num =[Y*D+C]-LËøôÊòØ‰º†ËØ¥‰∏≠ÁöÑÂØøÊòüÈÄöÁî®ÂÖ¨Âºè ÂÖ¨ÂºèËß£ËØªÔºöÂπ¥Êï∞ÁöÑÂêé2‰Ωç‰πò0.2422Âä†C(Âç≥ÔºöcenturyValue)ÂèñÊï¥Êï∞ÂêéÔºåÂáèÈó∞Âπ¥Êï∞
 		 */
-		int y = year % 100;// ≤Ω÷Ë1:»°ƒÍ∑÷µƒ∫Û¡ΩŒª ˝
-		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {// »ÚƒÍ
+		int y = year % 100;// Ê≠•È™§1:ÂèñÂπ¥ÂàÜÁöÑÂêé‰∏§‰ΩçÊï∞
+		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {// Èó∞Âπ¥
 			if (ordinal == SolarTermsEnum.XIAOHAN.ordinal() || ordinal == SolarTermsEnum.DAHAN.ordinal()
 					|| ordinal == SolarTermsEnum.LICHUN.ordinal() || ordinal == SolarTermsEnum.YUSHUI.ordinal()) {
-				// ◊¢“‚£∫∑≤»ÚƒÍ3‘¬1»’«∞»ÚƒÍ ˝“™ºı“ª£¨º¥£∫L=[(Y-1)/4],“ÚŒ™–°∫Æ°¢¥Û∫Æ°¢¡¢¥∫°¢”ÍÀÆ’‚¡Ω∏ˆΩ⁄∆¯∂º–°”⁄3‘¬1»’,À˘“‘ y = y-1
-				y = y - 1;// ≤Ω÷Ë2
+				// Ê≥®ÊÑèÔºöÂá°Èó∞Âπ¥3Êúà1Êó•ÂâçÈó∞Âπ¥Êï∞Ë¶ÅÂáè‰∏ÄÔºåÂç≥ÔºöL=[(Y-1)/4],Âõ†‰∏∫Â∞èÂØí„ÄÅÂ§ßÂØí„ÄÅÁ´ãÊò•„ÄÅÈõ®Ê∞¥Ëøô‰∏§‰∏™ËäÇÊ∞îÈÉΩÂ∞è‰∫é3Êúà1Êó•,ÊâÄ‰ª• y = y-1
+				y = y - 1;// Ê≠•È™§2
 			}
 		}
-		dateNum = (int) (y * D + centuryValue) - (int) (y / 4);// ≤Ω÷Ë3£¨ π”√π´ Ω[Y*D+C]-Lº∆À„
-		dateNum += specialYearOffset(year, name);// ≤Ω÷Ë4£¨º”…œÃÿ ‚µƒƒÍ∑÷µƒΩ⁄∆¯∆´“∆¡ø
+		dateNum = (int) (y * D + centuryValue) - (int) (y / 4);// Ê≠•È™§3Ôºå‰ΩøÁî®ÂÖ¨Âºè[Y*D+C]-LËÆ°ÁÆó
+		dateNum += specialYearOffset(year, name);// Ê≠•È™§4ÔºåÂä†‰∏äÁâπÊÆäÁöÑÂπ¥ÂàÜÁöÑËäÇÊ∞îÂÅèÁßªÈáè
 		return dateNum;
 	}
 
 	/**
-	 * Ãÿ¿˝,Ãÿ ‚µƒƒÍ∑÷µƒΩ⁄∆¯∆´“∆¡ø,”…”⁄π´ Ω≤¢≤ªÕÍ…∆£¨À˘“‘À„≥ˆµƒ∏ˆ±Ω⁄∆¯µƒµ⁄º∏ÃÏ ˝≤¢≤ª◊º»∑£¨‘⁄¥À∑µªÿ∆‰∆´“∆¡ø
+	 * Áâπ‰æã,ÁâπÊÆäÁöÑÂπ¥ÂàÜÁöÑËäÇÊ∞îÂÅèÁßªÈáè,Áî±‰∫éÂÖ¨ÂºèÂπ∂‰∏çÂÆåÂñÑÔºåÊâÄ‰ª•ÁÆóÂá∫ÁöÑ‰∏™Âà´ËäÇÊ∞îÁöÑÁ¨¨Âá†Â§©Êï∞Âπ∂‰∏çÂáÜÁ°ÆÔºåÂú®Ê≠§ËøîÂõûÂÖ∂ÂÅèÁßªÈáè
 	 * 
 	 * @param year
-	 *            ƒÍ∑›
+	 *            Âπ¥‰ªΩ
 	 * @param name
-	 *            Ω⁄∆¯√˚≥∆
-	 * @return ∑µªÿ∆‰∆´“∆¡ø
+	 *            ËäÇÊ∞îÂêçÁß∞
+	 * @return ËøîÂõûÂÖ∂ÂÅèÁßªÈáè
 	 */
 	public static int specialYearOffset(int year, String name) {
 		int offset = 0;
@@ -141,97 +141,97 @@ public class SolarTerm {
 			switch (date.month) {
 			case 1: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.XIAOHAN.name()) == date.day)
-					return "–°∫Æ";
+					return "Â∞èÂØí";
 				if (getSolarTermNum(date.year, SolarTermsEnum.DAHAN.name()) == date.day)
-					return "¥Û∫Æ";
+					return "Â§ßÂØí";
 				break;
 			}
 
 			case 2: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.LICHUN.name()) == date.day)
-					return "¡¢¥∫";
+					return "Á´ãÊò•";
 				if (getSolarTermNum(date.year, SolarTermsEnum.YUSHUI.name()) == date.day)
-					return "”ÍÀÆ";
+					return "Èõ®Ê∞¥";
 				break;
 			}
 
 			case 3: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.JINGZHE.name()) == date.day)
-					return "æ™’›";
+					return "ÊÉäËõ∞";
 				if (getSolarTermNum(date.year, SolarTermsEnum.CHUNFEN.name()) == date.day)
-					return "¥∫∑÷";
+					return "Êò•ÂàÜ";
 				break;
 			}
 
 			case 4: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.QINGMING.name()) == date.day)
-					return "«Â√˜";
+					return "Ê∏ÖÊòé";
 				if (getSolarTermNum(date.year, SolarTermsEnum.GUYU.name()) == date.day)
-					return "π»”Í";
+					return "Ë∞∑Èõ®";
 				break;
 			}
 
 			case 5: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.LIXIA.name()) == date.day)
-					return "¡¢œƒ";
+					return "Á´ãÂ§è";
 				if (getSolarTermNum(date.year, SolarTermsEnum.XIAOMAN.name()) == date.day)
-					return "–°¬˙";
+					return "Â∞èÊª°";
 				break;
 			}
 
 			case 6: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.MANGZHONG.name()) == date.day)
-					return "√¢÷÷";
+					return "ËäíÁßç";
 				if (getSolarTermNum(date.year, SolarTermsEnum.XIAZHI.name()) == date.day)
-					return "œƒ÷¡";
+					return "Â§èËá≥";
 				break;
 			}
 
 			case 7: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.XIAOSHU.name()) == date.day)
-					return "–° Ó";
+					return "Â∞èÊöë";
 				if (getSolarTermNum(date.year, SolarTermsEnum.DASHU.name()) == date.day)
-					return "¥Û Ó";
+					return "Â§ßÊöë";
 				break;
 			}
 
 			case 8: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.LIQIU.name()) == date.day)
-					return "¡¢«Ô";
+					return "Á´ãÁßã";
 				if (getSolarTermNum(date.year, SolarTermsEnum.CHUSHU.name()) == date.day)
-					return "¥¶ Ó";
+					return "Â§ÑÊöë";
 				break;
 			}
 
 			case 9: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.BAILU.name()) == date.day)
-					return "∞◊¬∂";
+					return "ÁôΩÈú≤";
 				if (getSolarTermNum(date.year, SolarTermsEnum.QIUFEN.name()) == date.day)
-					return "«Ô∑÷";
+					return "ÁßãÂàÜ";
 				break;
 			}
 
 			case 10: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.HANLU.name()) == date.day)
-					return "∫Æ¬∂";
+					return "ÂØíÈú≤";
 				if (getSolarTermNum(date.year, SolarTermsEnum.SHUANGJIANG.name()) == date.day)
-					return "À™Ωµ";
+					return "ÈúúÈôç";
 				break;
 			}
 
 			case 11: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.LIDONG.name()) == date.day)
-					return "¡¢∂¨";
+					return "Á´ãÂÜ¨";
 				if (getSolarTermNum(date.year, SolarTermsEnum.XIAOXUE.name()) == date.day)
-					return "–°—©";
+					return "Â∞èÈõ™";
 				break;
 			}
 
 			case 12: {
 				if (getSolarTermNum(date.year, SolarTermsEnum.DAXUE.name()) == date.day)
-					return "¥Û—©";
+					return "Â§ßÈõ™";
 				if (getSolarTermNum(date.year, SolarTermsEnum.DONGZHI.name()) == date.day)
-					return "∂¨÷¡";
+					return "ÂÜ¨Ëá≥";
 			}
 			}
 		return null;

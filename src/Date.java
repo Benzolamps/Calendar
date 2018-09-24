@@ -1,13 +1,14 @@
-import java.text.ParseException;
+ï»¿import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
 /**
  * 
- * ÈÕÆÚÀà
+ * æ—¥æœŸç±»
  * 
  * @author Benzolamps
+ * 2018å¹´3æœˆ1æ—¥10:50:55
  *
  */
 public class Date implements Cloneable {
@@ -41,7 +42,7 @@ public class Date implements Cloneable {
 		this.second = second;
 	}
 
-	public static Date getToday(TimeZone z) // ·µ»Ø½ñÌìµÄÈÕÆÚ
+	public static Date getToday(TimeZone z) // è¿”å›ä»Šå¤©çš„æ—¥æœŸ
 	{
 		Date date = new Date();
 		date.year = Calendar.getInstance(z).get(Calendar.YEAR);
@@ -54,37 +55,37 @@ public class Date implements Cloneable {
 		return date;
 	}
 
-	public boolean isLeapYear() // ÅĞ¶ÏÊÇ·ñÊÇÈòÄê
+	public boolean isLeapYear() // åˆ¤æ–­æ˜¯å¦æ˜¯é—°å¹´
 	{
 		return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
 	}
 
-	public int getDayCount() // ÅĞ¶ÏÃ¿ÔÂµÄÌìÊı
+	public int getDayCount() // åˆ¤æ–­æ¯æœˆçš„å¤©æ•°
 	{
 		switch (month) {
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			return 31;
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			return 30;
-		case 2: {
-			if (isLeapYear()) {
-				return 29;
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				return 31;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				return 30;
+			case 2: {
+				if (isLeapYear()) {
+					return 29;
+				}
+				else {
+					return 28;
+				}
 			}
-			else {
-				return 28;
-			}
-		}
-		default:
-			return -1;
+			default:
+				return -1;
 		}
 	}
 
@@ -101,7 +102,7 @@ public class Date implements Cloneable {
 	}
 
 	public String getDateString() {
-		return year + "Äê" + month + "ÔÂ" + day + "ÈÕ";
+		return year + "å¹´" + month + "æœˆ" + day + "æ—¥";
 	}
 
 	public static String getNowString(TimeZone z) {

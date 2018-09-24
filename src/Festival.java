@@ -1,4 +1,4 @@
-import java.text.ParseException;
+ï»¿import java.text.ParseException;
 import java.util.Vector;
 
 /**
@@ -16,29 +16,29 @@ public class Festival {
 		this.name = name;
 	}
 
-	public static void finalFestival() { // ¹«Àú½ÚÈÕ
+	public static void finalFestival() { // å…¬å†èŠ‚æ—¥
 		finalFestival = new Vector<Festival>();
 
-		finalFestival.add(new Festival(new Date(1990, 1, 1, -1, -1, -1), "Ôªµ©")); // Ôªµ©(1ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 2, 14, -1, -1, -1), "ÇéÈË½Ú")); // ÇéÈË½Ú(2ÔÂ14ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 3, 8, -1, -1, -1), "¸¾Å®½Ú")); // ¸¾Å®½Ú(3ÔÂ8ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 3, 12, -1, -1, -1), "Ö²Ê÷½Ú")); // Ö²Ê÷½Ú(3ÔÂ12ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 4, 1, -1, -1, -1), "ÓŞÈË½Ú")); // ÓŞÈË½Ú(4ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 5, 1, -1, -1, -1), "ÀÍ¶¯½Ú")); // ÀÍ¶¯½Ú(5ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 5, 4, -1, -1, -1), "ÇàÄê½Ú")); // ÇàÄê½Ú(5ÔÂ4ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 6, 1, -1, -1, -1), "¶ùÍ¯½Ú")); // ¶ùÍ¯½Ú(6ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 7, 1, -1, -1, -1), "½¨µ³½Ú")); // ½¨µ³½Ú(7ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 8, 1, -1, -1, -1), "½¨¾ü½Ú")); // ½¨¾ü½Ú(8ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 9, 10, -1, -1, -1), "½ÌÊ¦½Ú")); // ½ÌÊ¦½Ú(9ÔÂ10ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 10, 1, -1, -1, -1), "¹úÇì½Ú")); // ¹úÇì½Ú(10ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 11, 1, -1, -1, -1), "ÍòÊ¥½Ú")); // ÍòÊ¥½Ú(11ÔÂ1ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 11, 2, -1, -1, -1), "ÍòÁé½Ú")); // ÍòÁé½Ú(11ÔÂ2ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 11, 11, -1, -1, -1), "¹â¹÷½Ú")); // ¹â¹÷½Ú(11ÔÂ11ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 12, 24, -1, -1, -1), "Æ½°²Ò¹")); // Æ½°²Ò¹(12ÔÂ24ÈÕ)
-		finalFestival.add(new Festival(new Date(1990, 12, 25, -1, -1, -1), "Ê¥µ®½Ú")); // Ê¥µ®½Ú(12ÔÂ25ÈÕ)
+		finalFestival.add(new Festival(new Date(1990, 1, 1, -1, -1, -1), "å…ƒæ—¦")); // å…ƒæ—¦(1æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 2, 14, -1, -1, -1), "æƒ…äººèŠ‚")); // æƒ…äººèŠ‚(2æœˆ14æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 3, 8, -1, -1, -1), "å¦‡å¥³èŠ‚")); // å¦‡å¥³èŠ‚(3æœˆ8æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 3, 12, -1, -1, -1), "æ¤æ ‘èŠ‚")); // æ¤æ ‘èŠ‚(3æœˆ12æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 4, 1, -1, -1, -1), "æ„šäººèŠ‚")); // æ„šäººèŠ‚(4æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 5, 1, -1, -1, -1), "åŠ³åŠ¨èŠ‚")); // åŠ³åŠ¨èŠ‚(5æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 5, 4, -1, -1, -1), "é’å¹´èŠ‚")); // é’å¹´èŠ‚(5æœˆ4æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 6, 1, -1, -1, -1), "å„¿ç«¥èŠ‚")); // å„¿ç«¥èŠ‚(6æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 7, 1, -1, -1, -1), "å»ºå…šèŠ‚")); // å»ºå…šèŠ‚(7æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 8, 1, -1, -1, -1), "å»ºå†›èŠ‚")); // å»ºå†›èŠ‚(8æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 9, 10, -1, -1, -1), "æ•™å¸ˆèŠ‚")); // æ•™å¸ˆèŠ‚(9æœˆ10æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 10, 1, -1, -1, -1), "å›½åº†èŠ‚")); // å›½åº†èŠ‚(10æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 11, 1, -1, -1, -1), "ä¸‡åœ£èŠ‚")); // ä¸‡åœ£èŠ‚(11æœˆ1æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 11, 2, -1, -1, -1), "ä¸‡çµèŠ‚")); // ä¸‡çµèŠ‚(11æœˆ2æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 11, 11, -1, -1, -1), "å…‰æ£èŠ‚")); // å…‰æ£èŠ‚(11æœˆ11æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 12, 24, -1, -1, -1), "å¹³å®‰å¤œ")); // å¹³å®‰å¤œ(12æœˆ24æ—¥)
+		finalFestival.add(new Festival(new Date(1990, 12, 25, -1, -1, -1), "åœ£è¯èŠ‚")); // åœ£è¯èŠ‚(12æœˆ25æ—¥)
 	}
 
-	public static boolean isMotherDay(Date date) throws ParseException { // Ä¸Ç×½Ú£¬5ÔÂµÚ2¸öĞÇÆÚÁù
+	public static boolean isMotherDay(Date date) throws ParseException { // æ¯äº²èŠ‚ï¼Œ5æœˆç¬¬2ä¸ªæ˜ŸæœŸå…­
 		if (date.month != 5)
 			return false;
 
@@ -54,7 +54,7 @@ public class Festival {
 		return true;
 	}
 
-	public static boolean isFatherDay(Date date) throws ParseException { // ¸¸Ç×½Ú£¬6ÔÂµÚ3¸öĞÇÆÚÈÕ
+	public static boolean isFatherDay(Date date) throws ParseException { // çˆ¶äº²èŠ‚ï¼Œ6æœˆç¬¬3ä¸ªæ˜ŸæœŸæ—¥
 		if (date.month != 6)
 			return false;
 
@@ -70,7 +70,7 @@ public class Festival {
 		return true;
 	}
 
-	public static boolean isThanksDay(Date date) throws ParseException { // ¸Ğ¶÷½Ú£¬11ÔÂµÚ4¸öĞÇÆÚÎå
+	public static boolean isThanksDay(Date date) throws ParseException { // æ„Ÿæ©èŠ‚ï¼Œ11æœˆç¬¬4ä¸ªæ˜ŸæœŸäº”
 		if (date.month != 11)
 			return false;
 
@@ -89,18 +89,18 @@ public class Festival {
 	public static void lunarFestival() {
 		lunarFestival = new Vector<Festival>();
 
-		lunarFestival.add(new Festival(new Date(1990, 1, 1, -1, -1, -1), "´º½Ú")); // ´º½Ú(ÕıÔÂ³õÒ»)
-		lunarFestival.add(new Festival(new Date(1990, 1, 15, -1, -1, -1), "ÔªÏü½Ú")); // ÔªÏü½Ú(ÕıÔÂÊ®Îå)
-		lunarFestival.add(new Festival(new Date(1990, 2, 2, -1, -1, -1), "ÁúÌ§Í·")); // ÁúÌ§Í·(¶şÔÂ³õ¶ş)
-		lunarFestival.add(new Festival(new Date(1990, 5, 5, -1, -1, -1), "¶ËÎç½Ú")); // ¶ËÎç½Ú(ÎåÔÂ³õÎå)
-		lunarFestival.add(new Festival(new Date(1990, 7, 7, -1, -1, -1), "ÆßÏ¦")); // ÆßÏ¦(ÆßÔÂ³õÆß)
-		lunarFestival.add(new Festival(new Date(1990, 7, 15, -1, -1, -1), "ÖĞÔª½Ú")); // ÖĞÔª½Ú(ÆßÔÂÊ®Îå)
-		lunarFestival.add(new Festival(new Date(1990, 8, 15, -1, -1, -1), "ÖĞÇï½Ú")); // ÖĞÇï½Ú(°ËÔÂÊ®Îå)
-		lunarFestival.add(new Festival(new Date(1990, 9, 9, -1, -1, -1), "ÖØÑô½Ú")); // ÖØÑô½Ú(¾ÅÔÂ³õ¾Å)
-		lunarFestival.add(new Festival(new Date(1990, 12, 8, -1, -1, -1), "À°°Ë")); // À°°Ë(À°ÔÂ³õ°Ë)
+		lunarFestival.add(new Festival(new Date(1990, 1, 1, -1, -1, -1), "æ˜¥èŠ‚")); // æ˜¥èŠ‚(æ­£æœˆåˆä¸€)
+		lunarFestival.add(new Festival(new Date(1990, 1, 15, -1, -1, -1), "å…ƒå®µèŠ‚")); // å…ƒå®µèŠ‚(æ­£æœˆåäº”)
+		lunarFestival.add(new Festival(new Date(1990, 2, 2, -1, -1, -1), "é¾™æŠ¬å¤´")); // é¾™æŠ¬å¤´(äºŒæœˆåˆäºŒ)
+		lunarFestival.add(new Festival(new Date(1990, 5, 5, -1, -1, -1), "ç«¯åˆèŠ‚")); // ç«¯åˆèŠ‚(äº”æœˆåˆäº”)
+		lunarFestival.add(new Festival(new Date(1990, 7, 7, -1, -1, -1), "ä¸ƒå¤•")); // ä¸ƒå¤•(ä¸ƒæœˆåˆä¸ƒ)
+		lunarFestival.add(new Festival(new Date(1990, 7, 15, -1, -1, -1), "ä¸­å…ƒèŠ‚")); // ä¸­å…ƒèŠ‚(ä¸ƒæœˆåäº”)
+		lunarFestival.add(new Festival(new Date(1990, 8, 15, -1, -1, -1), "ä¸­ç§‹èŠ‚")); // ä¸­ç§‹èŠ‚(å…«æœˆåäº”)
+		lunarFestival.add(new Festival(new Date(1990, 9, 9, -1, -1, -1), "é‡é˜³èŠ‚")); // é‡é˜³èŠ‚(ä¹æœˆåˆä¹)
+		lunarFestival.add(new Festival(new Date(1990, 12, 8, -1, -1, -1), "è…Šå…«")); // è…Šå…«(è…Šæœˆåˆå…«)
 	}
 
-	public static boolean isChuxi(Date date) throws ParseException { // ³ıÏ¦£¬´óÔÂÀ°ÔÂÈıÊ®£¬Ğ¡ÔÂÀ°ÔÂØ¥¾Å
+	public static boolean isChuxi(Date date) throws ParseException { // é™¤å¤•ï¼Œå¤§æœˆè…Šæœˆä¸‰åï¼Œå°æœˆè…Šæœˆå»¿ä¹
 		Lunar lunarDate = new Lunar(date);
 		if (lunarDate.month != 12)
 			return false;
@@ -136,13 +136,13 @@ public class Festival {
 		}
 
 		if (isMotherDay(date))
-			f.add("Ä¸Ç×½Ú");
+			f.add("æ¯äº²èŠ‚");
 		if (isFatherDay(date))
-			f.add("¸¸Ç×½Ú");
+			f.add("çˆ¶äº²èŠ‚");
 		if (isThanksDay(date))
-			f.add("¸Ğ¶÷½Ú");
+			f.add("æ„Ÿæ©èŠ‚");
 		if (isChuxi(date))
-			f.add("³ıÏ¦");
+			f.add("é™¤å¤•");
 
 		return f.toArray(new String[f.size()]);
 	}

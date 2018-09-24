@@ -1,4 +1,4 @@
-import java.awt.BorderLayout;
+ï»¿import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -17,13 +17,13 @@ import javax.swing.Timer;
  * @author Benzolamps
  *
  */
-@SuppressWarnings({"rawtypes", "unchecked"})
+
 public class TimeZoneFrame extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = -2062761489324857999L;
 	private JPanel northPanel, centerPanel, southPanel;
 	private JLabel timeChanged;
-	private JComboBox zoneCombo;
+	private JComboBox<String> zoneCombo;
 	private String zoneID[];
 	private TimeZone zoneSelected;
 	private CalendarFrame frame;
@@ -32,7 +32,7 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 	
 	public TimeZoneFrame(CalendarFrame frame)
 	{
-		super("ÉèÖÃÊ±Çø");
+		super("è®¾ç½®æ—¶åŒº");
 		this.frame = frame;
 		setLayout(new BorderLayout(50,50));
 		setSize(320, 240);
@@ -55,7 +55,7 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 	
 	private JPanel createNorthPanel()
 	{
-		zoneCombo = new JComboBox();
+		zoneCombo = new JComboBox<String>();
 		
 		zoneID = new String[TimeZone.getAvailableIDs().length];
 		for (int i = 0; i < zoneID.length; i++)
@@ -68,7 +68,7 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 		northPanel = new JPanel();
 		northPanel.setLayout(new BorderLayout(3, 3));
 		northPanel.add(zoneCombo, BorderLayout.CENTER);
-		northPanel.add(new JLabel("ÇëÑ¡ÔñÊ±Çø£º"), BorderLayout.NORTH);
+		northPanel.add(new JLabel("è¯·é€‰æ‹©æ—¶åŒºï¼š"), BorderLayout.NORTH);
 		
 		return northPanel;
 	}
@@ -86,11 +86,11 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 	
 	private JPanel createSouthPanel()
 	{
-		JButton cancelButton = new JButton("È¡Ïû");
+		JButton cancelButton = new JButton("å–æ¶ˆ");
 		cancelButton.setMnemonic(KeyEvent.VK_C);
 		cancelButton.addActionListener(this);
 		
-		JButton okButton = new JButton("È·¶¨");
+		JButton okButton = new JButton("ç¡®å®š");
 		okButton.setMnemonic(KeyEvent.VK_O);
 		okButton.addActionListener(this);
 		
@@ -108,7 +108,7 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 		// TODO Auto-generated method stub
 		changeTime();
 		
-		if ("È·¶¨".equals(arg0.getActionCommand()))
+		if ("ç¡®å®š".equals(arg0.getActionCommand()))
 		{
 			setVisible(false);
 			frame.setToday(date);
@@ -124,7 +124,7 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 			}
 		}
 		
-		if ("È¡Ïû".equals(arg0.getActionCommand()))
+		if ("å–æ¶ˆ".equals(arg0.getActionCommand()))
 		{
 			setVisible(false);
 		}
@@ -134,9 +134,9 @@ public class TimeZoneFrame extends JFrame implements ActionListener
 	{
 		zoneSelected = TimeZone.getTimeZone(TimeZone.getAvailableIDs()[zoneCombo.getSelectedIndex()]);	
 		date = Date.getToday(zoneSelected);
-		String str = "µ±Ç°ÈÕÆÚÓëÊ±¼ä£º";
+		String str = "å½“å‰æ—¥æœŸä¸Žæ—¶é—´ï¼š";
 		str = str + date.getDateString();
-		str = str + "£¬" + Date.getNowString(zoneSelected);
+		str = str + "ï¼Œ" + Date.getNowString(zoneSelected);
 		timeChanged.setText(str);
 	}
 }

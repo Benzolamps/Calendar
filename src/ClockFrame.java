@@ -1,4 +1,4 @@
-import java.awt.BorderLayout;
+ï»¿import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,106 +13,92 @@ import javax.swing.SwingConstants;
 
 /**
  * 
- * ÉèÖÃÄÖÖÓ½çÃæ
+ * è®¾ç½®é—¹é’Ÿç•Œé¢
  * 
  * @author Benzolamps
  *
  */
-public class ClockFrame extends JFrame implements ActionListener
-{
+public class ClockFrame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = -2335732010000436154L;
 	private JTextField hourText, minuteText;
 	private CalendarFrame frame;
-	
-	public ClockFrame(CalendarFrame frame)
-	{
-		super("ÉèÖÃÄÖÖÓ");
+
+	public ClockFrame(CalendarFrame frame) {
+		super("è®¾ç½®é—¹é’Ÿ");
 		this.frame = frame;
 		setLayout(new BorderLayout(30, 30));
 		setSize(240, 160);
 		setVisible(true);
 		setResizable(false);
-		getContentPane().add(new JLabel("ÉèÖÃÄÖÖÓµÄÊ±¼ä£º"), BorderLayout.NORTH);
-		getContentPane().add(createCenterPane(),BorderLayout.CENTER);
+		getContentPane().add(new JLabel("è®¾ç½®é—¹é’Ÿçš„æ—¶é—´ï¼š"), BorderLayout.NORTH);
+		getContentPane().add(createCenterPane(), BorderLayout.CENTER);
 		getContentPane().add(createSouthPane(), BorderLayout.SOUTH);
 	}
-	
-	public JPanel createCenterPane()
-	{
+
+	public JPanel createCenterPane() {
 		hourText = new JTextField();
 		minuteText = new JTextField();
-		
+
 		hourText.setText(Date.getToday(frame.getTimeZone()).hour + "");
 		minuteText.setText(String.valueOf(Date.getToday(frame.getTimeZone()).minute + ""));
-		
+
 		JPanel centerPane = new JPanel();
 		centerPane.setLayout(new GridLayout(1, 5));
 		centerPane.add(new JLabel());
 		centerPane.add(hourText);
 		centerPane.add(new JLabel(":", SwingConstants.CENTER));
-		
+
 		centerPane.add(minuteText);
 		centerPane.add(new JLabel());
-		
+
 		return centerPane;
 	}
-	
-	public JPanel createSouthPane()
-	{
-		JButton cancelButton = new JButton("È¡Ïû");
+
+	public JPanel createSouthPane() {
+		JButton cancelButton = new JButton("å–æ¶ˆ");
 		cancelButton.setMnemonic(KeyEvent.VK_C);
 		cancelButton.addActionListener(this);
-		
-		JButton okButton = new JButton("È·¶¨");
+
+		JButton okButton = new JButton("ç¡®å®š");
 		okButton.setMnemonic(KeyEvent.VK_O);
 		okButton.addActionListener(this);
-		
+
 		JPanel southPanel = new JPanel();
 		southPanel.setLayout(new BorderLayout(60, 60));
 		southPanel.add(cancelButton, BorderLayout.WEST);
 		southPanel.add(okButton, BorderLayout.EAST);
-		
+
 		return southPanel;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0)
-	{
-		// TODO Auto-generated method stub
-		if ("È·¶¨".equals(arg0.getActionCommand()))
-		{
-			if (!hourText.getText().isEmpty() || !minuteText.getText().isEmpty())
-			{
+	public void actionPerformed(ActionEvent arg0) {
+		if ("ç¡®å®š".equals(arg0.getActionCommand())) {
+			if (!hourText.getText().isEmpty() || !minuteText.getText().isEmpty()) {
 				int hour = 0, minute = 0;
-				try
-				{
+				try {
 					hour = Integer.valueOf(hourText.getText());
 					minute = Integer.valueOf(minuteText.getText());
-				}
-				catch (NumberFormatException e)
-				{
+				} catch (NumberFormatException e) {
 					hour = -1;
 				}
-				
+
 				if (hour > 23 || hour < 0 || minute > 59 || minute < 0)
-					new MessageFrame("ÌáÊ¾", "Ê±¼äÖµ·Ç·¨!", null).setVisible(true);
-				else
-				{
+					new MessageFrame("æç¤º", "æ—¶é—´å€¼éæ³•!", null).setVisible(true);
+				else {
 					setVisible(false);
 					frame.setClock(new Date(-1, -1, -1, hour, minute, -1));
 					frame.setAlarmed(false);
-				}			
+				}
 			}
-			
-			else
-			{
-				new MessageFrame("ÌáÊ¾", "Ê±¼äÖµÎª¿Õ!", null).setVisible(true);
+
+			else {
+				new MessageFrame("æç¤º", "æ—¶é—´å€¼ä¸ºç©º!", null).setVisible(true);
 			}
 		}
-		
-		if ("È¡Ïû".equals(arg0.getActionCommand()))
-		{
+
+		if ("å–æ¶ˆ".equals(arg0.getActionCommand())) {
 			setVisible(false);
-		}	
+		}
 	}
 }

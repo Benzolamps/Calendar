@@ -1,4 +1,4 @@
-
+ï»¿
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -34,7 +34,7 @@ public class MessageFrame extends JFrame implements ActionListener {
 	}
 
 	public JButton createOKButton() {
-		okButton = new JButton("È·¶¨");
+		okButton = new JButton("ç¡®å®š");
 		okButton.setMnemonic(KeyEvent.VK_O);
 		Point pt = new Point();
 		pt.x = getContentPane().getWidth() - 90;
@@ -48,7 +48,7 @@ public class MessageFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if ("È·¶¨".equals(e.getActionCommand())) {
+		if ("ç¡®å®š".equals(e.getActionCommand())) {
 			setVisible(false);
 		}
 	}

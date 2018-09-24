@@ -1,4 +1,4 @@
-import java.awt.BorderLayout;
+ï»¿import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,14 +24,13 @@ import javax.swing.Timer;
 import javafx.scene.media.AudioClip;
 
 /**
- * 
- * ÍòÄêÀúÖ÷½çÃæÀà
- * 
+ *
+ * ä¸‡å¹´å†ä¸»ç•Œé¢ç±»
+ *
  * @author Benzolamps
  *
  */
-public class CalendarFrame extends JFrame implements ActionListener, FocusListener
-{
+public class CalendarFrame extends JFrame implements ActionListener, FocusListener {
 	private static final long serialVersionUID = 4726876818484902015L;
 	private JPanel southPanel;
 	private JPanel northPanel;
@@ -40,7 +39,7 @@ public class CalendarFrame extends JFrame implements ActionListener, FocusListen
 	private JEditorPane thisText[] = new JEditorPane[32];
 	private JLabel timeText;
 	private JButton button[];
-	private final static char[] WEEK = {'ÈÕ', 'Ò»', '¶ş', 'Èı', 'ËÄ', 'Îå', 'Áù'};
+	private final static char[] WEEK = { 'æ—¥', 'ä¸€', 'äºŒ', 'ä¸‰', 'å››', 'äº”', 'å…­' };
 	private JMenuBar menuBar;
 	private Date date;
 	private Date today;
@@ -48,30 +47,29 @@ public class CalendarFrame extends JFrame implements ActionListener, FocusListen
 	private Date clock = new Date(-1, -1, -1, -1, -1, -1);
 	private boolean isAlarmed = false;
 	private AudioClip audio = new AudioClip(CalendarFrame.class.getResource("/wav/Alarm.wav").toString());
-		// CalendarFrame.class.getResource() »ñÈ¡µ±Ç°Â·¾¶×ÊÔ´
-	public CalendarFrame() throws ParseException, IOException
-	{
-		super("ÍòÄêÀú");
-		audio.setCycleCount(AudioClip.INDEFINITE); // AudioClipÎŞÏŞÑ­»·²¥·Å
+
+	// CalendarFrame.class.getResource() è·å–å½“å‰è·¯å¾„èµ„æº
+	public CalendarFrame() throws ParseException, IOException {
+		super("ä¸‡å¹´å†");
+		audio.setCycleCount(AudioClip.INDEFINITE); // AudioClipæ— é™å¾ªç¯æ’­æ”¾
 		z = TimeZone.getDefault();
 		setLayout(new BorderLayout());
 		setSize(400, 600);
 		setResizable(false);
 		setJMenuBar(createMenuBar());
 		getContentPane().add(createSouthPanel(), BorderLayout.CENTER);
-		getContentPane().add(createNorthPanel(),BorderLayout.NORTH);
+		getContentPane().add(createNorthPanel(), BorderLayout.NORTH);
 		timeText = new JLabel(" ", SwingConstants.RIGHT);
-		getContentPane().add(timeText,BorderLayout.SOUTH);
+		getContentPane().add(timeText, BorderLayout.SOUTH);
 		today = Date.getToday(TimeZone.getDefault());
 		date = today.clone();
 		Timer timer = new Timer(1000, this);
-		timer.start();  
+		timer.start();
 		showOneMonth();
 		setVisible(true);
 	}
 
-	private JPanel createNorthPanel() throws IOException
-	{
+	private JPanel createNorthPanel() throws IOException {
 		northPanel = new JPanel();
 		northPanel.setLayout(new BorderLayout());
 		infoText = new JEditorPane();
@@ -85,48 +83,41 @@ public class CalendarFrame extends JFrame implements ActionListener, FocusListen
 		button[2] = new JButton(">");
 		button[3] = new JButton(">>");
 
-		for (JButton b : button)
-		{
+		for (JButton b : button) {
 			b.addActionListener(this);
 		}
-		
+
 		JPanel westPanel = new JPanel();
 		westPanel.add(button[0], BorderLayout.WEST);
 		westPanel.add(button[1], BorderLayout.EAST);
 		northPanel.add(westPanel, BorderLayout.WEST);
-		
+
 		JPanel eastPanel = new JPanel();
 		eastPanel.add(button[2], BorderLayout.WEST);
 		eastPanel.add(button[3], BorderLayout.EAST);
 		northPanel.add(eastPanel, BorderLayout.EAST);
-		
+
 		return northPanel;
 	}
-	
-	private JPanel createSouthPanel()
-	{
+
+	private JPanel createSouthPanel() {
 		int sumDay = 0;
 		southPanel = new JPanel();
 		southPanel.setLayout(new GridLayout(7, 7, 5, 20));
 		dayText = new JEditorPane[42];
-		for (int i = 0; i < 7; i++)
-		{
-			for (int j = 0; j < 7; j++)
-			{
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
 				JPanel tempPanel = new JPanel();
 				tempPanel.setLayout(new BorderLayout());
-				if (i == 0)
-				{
+				if (i == 0) {
 					JEditorPane weekText = new JEditorPane();
 					weekText.setContentType("text/html");
 					weekText.setBackground(getBackground());
 					weekText.setEditable(false);
 					weekText.setSelectionColor(getBackground());
-					weekText.setText("<center><br/><font size=5><font face=¿¬Ìå>" + WEEK[j] + " </font></center>");
+					weekText.setText("<center><br/><font size=5><font face=æ¥·ä½“>" + WEEK[j] + " </font></center>");
 					tempPanel.add(weekText, SwingConstants.CENTER);
-				}
-				else
-				{
+				} else {
 					dayText[sumDay] = new JEditorPane();
 					dayText[sumDay].setEditable(false);
 					dayText[sumDay].setContentType("text/html");
@@ -134,7 +125,7 @@ public class CalendarFrame extends JFrame implements ActionListener, FocusListen
 					dayText[sumDay].setSelectionColor(new Color(0, 255, 255));
 					dayText[sumDay].addFocusListener(this);
 					tempPanel.add(dayText[sumDay]);
-					
+
 					sumDay++;
 				}
 				southPanel.add(tempPanel);
@@ -142,276 +133,227 @@ public class CalendarFrame extends JFrame implements ActionListener, FocusListen
 		}
 		return southPanel;
 	}
-	
-	private JMenuBar createMenuBar()
-	{	
-		JMenuItem worldTimeMenu = new JMenuItem("ÊÀ½çÊ±¼ä(W)");
+
+	private JMenuBar createMenuBar() {
+		JMenuItem worldTimeMenu = new JMenuItem("ä¸–ç•Œæ—¶é—´(W)");
 		worldTimeMenu.setMnemonic(KeyEvent.VK_W);
 		worldTimeMenu.addActionListener(this);
-		
-		JMenuItem clockMenu = new JMenuItem("ÉèÖÃÄÖÖÓ(C)");
+
+		JMenuItem clockMenu = new JMenuItem("è®¾ç½®é—¹é’Ÿ(C)");
 		clockMenu.setMnemonic(KeyEvent.VK_C);
 		clockMenu.addActionListener(this);
-		
-		JMenu toolMenu = new JMenu("¹¤¾ß(T)");
+
+		JMenu toolMenu = new JMenu("å·¥å…·(T)");
 		toolMenu.setMnemonic(KeyEvent.VK_T);
 		toolMenu.add(worldTimeMenu);
 		toolMenu.add(clockMenu);
-		
+
 		menuBar = new JMenuBar();
 		menuBar.add(toolMenu);
-		
+
 		return menuBar;
 	}
-	
-	public void showOneMonth() throws ParseException
-	{
+
+	public void showOneMonth() throws ParseException {
 		Date firstDay = new Date(date.year, date.month, 1, date.hour, date.minute, date.second);
 		int s = 0;
-		for (int i = 0; i < firstDay.getWeekday(); i++)
-		{
-			dayText[i].setText(null);	
-		}
-		for (int i = firstDay.getWeekday();  i < 41; i++)
-		{
+		for (int i = 0; i < firstDay.getWeekday(); i++) {
 			dayText[i].setText(null);
-			if (s < date.getDayCount())
-			{
+		}
+		for (int i = firstDay.getWeekday(); i < 41; i++) {
+			dayText[i].setText(null);
+			if (s < date.getDayCount()) {
 				Date d = new Date(date.year, date.month, ++s, date.hour, date.minute, date.second);
 				String month = new Lunar(d).getDay();
-				month = month.replace("³õÒ»", new Lunar(d).getMonth() + "ÔÂ");
-				if(SolarTerm.getSolarTerm(d) != null) month = SolarTerm.getSolarTerm(d);
-					
-				String temp ="<center>" + s + "<br/><font face=¿¬Ìå>" + month + "</font></center>";
-				
+				month = month.replace("åˆä¸€", new Lunar(d).getMonth() + "æœˆ");
+				if (SolarTerm.getSolarTerm(d) != null)
+					month = SolarTerm.getSolarTerm(d);
+
+				String temp = "<center>" + s + "<br/><font face=æ¥·ä½“>" + month + "</font></center>";
+
 				dayText[i].setText(temp);
 				thisText[s] = dayText[i];
 			}
-			
-			String str = "<center><font face=·ÂËÎ><b>";
+
+			String str = "<center><font face=ä»¿å®‹><b>";
 			str = str + date.getDateString();
 			str = str + "<br/>" + new Lunar(date).toString();
-			str = str + "<br/>ĞÇÆÚ" + WEEK[date.getWeekday() % 7];
+			str = str + "<br/>æ˜ŸæœŸ" + WEEK[date.getWeekday() % 7];
 			int t = Festival.getFestival(date).length;
-			for (int j = 0; j < t; j++)
-			{
-				str = str + "£¬" + Festival.getFestival(date)[j];
-			}	
-			if (SolarTerm.getSolarTerm(date) != null)
-			{
-				str = str + "£¬" + SolarTerm.getSolarTerm(date);
+			for (int j = 0; j < t; j++) {
+				str = str + "ï¼Œ" + Festival.getFestival(date)[j];
+			}
+			if (SolarTerm.getSolarTerm(date) != null) {
+				str = str + "ï¼Œ" + SolarTerm.getSolarTerm(date);
 			}
 			str = str + "</b></center>";
 			infoText.setText(str);
-			
+
 		}
-		
-		if(today.year == date.year && today.month == date.month)
-		{
+
+		if (today.year == date.year && today.month == date.month) {
 			String m = null;
-			
-			try 
-			{
+
+			try {
 				m = new Lunar(today).getDay();
-				m = m.replace("³õÒ»", new Lunar(today).getMonth() + "ÔÂ");
-			} 
-			catch (ParseException e) 
-			{
+				m = m.replace("åˆä¸€", new Lunar(today).getMonth() + "æœˆ");
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			if (SolarTerm.getSolarTerm(today) != null) m = SolarTerm.getSolarTerm(today);
-				
+
+			if (SolarTerm.getSolarTerm(today) != null)
+				m = SolarTerm.getSolarTerm(today);
+
 			String str = "<center><font color=blue>";
-			
+
 			str = str + today.day;
-			str = str + "<br/><font face=¿¬Ìå>" + m + "</font></center>";
+			str = str + "<br/><font face=æ¥·ä½“>" + m + "</font></center>";
 			thisText[today.day].setText(str);
 		}
-		
-		for (JEditorPane e : dayText)
-		{
+
+		for (JEditorPane e : dayText) {
 			e.setBackground(getBackground());
 		}
-		
+
 		thisText[date.day].setBackground(new Color(0, 255, 255));
-		
+
 	}
-	
+
 	@Override
-	public void actionPerformed(ActionEvent arg0)
-	{
+	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
-		//ÏìÓ¦timerµÄË¢ĞÂÊÂ¼ş
+
+		// å“åº”timerçš„åˆ·æ–°äº‹ä»¶
 		{
 			timeText.setText(Date.getNowString(z));
-			if (Date.getToday(z).hour == getClock().hour && Date.getToday(z).minute == getClock().minute && !isAlarmed)
-			{	
-				new MessageFrame("ÌáÊ¾", "ÄÖÖÓÊ±¼äµ½!", this).setVisible(true);
+			if (Date.getToday(z).hour == getClock().hour && Date.getToday(z).minute == getClock().minute
+					&& !isAlarmed) {
+				new MessageFrame("æç¤º", "é—¹é’Ÿæ—¶é—´åˆ°!", this).setVisible(true);
 				audio.play();
 				isAlarmed = true;
 			}
 		}
-		
-		if ("<<".equals(arg0.getActionCommand()))
-		{
-				date.year--;
-			if(date.year == 1901)
-			{
+
+		if ("<<".equals(arg0.getActionCommand())) {
+			date.year--;
+			if (date.year == 1901) {
 				button[0].setEnabled(false);
-				if(date.month == 1)
-				button[1].setEnabled(false);
+				if (date.month == 1)
+					button[1].setEnabled(false);
 			}
 			button[2].setEnabled(true);
 			button[3].setEnabled(true);
-			
-			try 
-			{
+
+			try {
 				showOneMonth();
-			} 
-			catch (ParseException e) 
-			{
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		if ("<".equals(arg0.getActionCommand()))
-		{
-			if (date.month == 1)
-			{
+
+		if ("<".equals(arg0.getActionCommand())) {
+			if (date.month == 1) {
 				date.month = 12;
 				date.year--;
-			}
-			else
-			{
+			} else {
 				date.month--;
 				date.day = (date.getDayCount() < date.day) ? date.getDayCount() : date.day;
 			}
-			
-			if (date.year == 1901)
-			{
+
+			if (date.year == 1901) {
 				button[0].setEnabled(false);
-				if(date.month == 1)
+				if (date.month == 1)
 					button[1].setEnabled(false);
 			}
-			
-			if (date.year != 2100 || date.month != 12)
-			{
+
+			if (date.year != 2100 || date.month != 12) {
 				button[2].setEnabled(true);
-				if(date.year != 2100)
-				{
+				if (date.year != 2100) {
 					button[3].setEnabled(true);
 				}
 			}
-			
-			try 
-			{
+
+			try {
 				showOneMonth();
-			} 
-			catch (ParseException e) 
-			{
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		if (">>".equals(arg0.getActionCommand()))
-		{
+
+		if (">>".equals(arg0.getActionCommand())) {
 			date.year++;
-			if (date.year == 2100)
-			{
-				button[3].setEnabled(false);
-				if (date.month == 12)
-				button[2].setEnabled(false);
-			}
-			button[0].setEnabled(true);
-			button[1].setEnabled(true);
-			
-			try 
-			{
-				showOneMonth();
-			} 
-			catch (ParseException e) 
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		if (">".equals(arg0.getActionCommand()))
-		{
-			if(date.month == 12)
-			{
-				date.month = 1;
-				date.year++;
-			}
-			else
-			{
-				date.month++;
-				date.day = (date.getDayCount() < date.day) ? date.getDayCount() : date.day;
-			}
-			
-			if (date.year == 2100)
-			{
+			if (date.year == 2100) {
 				button[3].setEnabled(false);
 				if (date.month == 12)
 					button[2].setEnabled(false);
 			}
-			
-			if (date.year != 1901 || date.month != 1)
-			{
-				button[1].setEnabled(true);
-				if (date.year != 1901)
-				{
-					button[0].setEnabled(true);
-				}
-			}
-			
-			try
-			{
+			button[0].setEnabled(true);
+			button[1].setEnabled(true);
+
+			try {
 				showOneMonth();
-			}
-			catch (ParseException e) 
-			{
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		if ("ÊÀ½çÊ±¼ä(W)".equals(arg0.getActionCommand()))
-		{
+
+		if (">".equals(arg0.getActionCommand())) {
+			if (date.month == 12) {
+				date.month = 1;
+				date.year++;
+			} else {
+				date.month++;
+				date.day = (date.getDayCount() < date.day) ? date.getDayCount() : date.day;
+			}
+
+			if (date.year == 2100) {
+				button[3].setEnabled(false);
+				if (date.month == 12)
+					button[2].setEnabled(false);
+			}
+
+			if (date.year != 1901 || date.month != 1) {
+				button[1].setEnabled(true);
+				if (date.year != 1901) {
+					button[0].setEnabled(true);
+				}
+			}
+
+			try {
+				showOneMonth();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		if ("ä¸–ç•Œæ—¶é—´(W)".equals(arg0.getActionCommand())) {
 			new TimeZoneFrame(this).setVisible(true);
 		}
-		
-		if ("ÉèÖÃÄÖÖÓ(C)".equals(arg0.getActionCommand()))
-		{
+
+		if ("è®¾ç½®é—¹é’Ÿ(C)".equals(arg0.getActionCommand())) {
 			new ClockFrame(this).setVisible(true);
 		}
-		
-		if ("È·¶¨".equals(arg0.getActionCommand()))
-		{
+
+		if ("ç¡®å®š".equals(arg0.getActionCommand())) {
 			audio.stop();
 		}
 	}
 
 	@Override
-	public void focusGained(FocusEvent arg0)
-	{
+	public void focusGained(FocusEvent arg0) {
 		// TODO Auto-generated method stub
-		for (int i = 1; i <= date.getDayCount(); i++)
-		{
-			if (thisText[i] == arg0.getComponent())
-			{
-				//thisText[i].setBackground(new Color(0, 255, 255));
+		for (int i = 1; i <= date.getDayCount(); i++) {
+			if (thisText[i] == arg0.getComponent()) {
+				// thisText[i].setBackground(new Color(0, 255, 255));
 				date.day = i;
-				try 
-				{
+				try {
 					showOneMonth();
-				} catch (ParseException e) 
-				{
+				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -420,57 +362,44 @@ public class CalendarFrame extends JFrame implements ActionListener, FocusListen
 	}
 
 	@Override
-	public void focusLost(FocusEvent arg0)
-	{
+	public void focusLost(FocusEvent arg0) {
 		// TODO Auto-generated method stub
 	}
-	
-	public void setAlarmed(boolean isAlarmed)
-	{
+
+	public void setAlarmed(boolean isAlarmed) {
 		this.isAlarmed = isAlarmed;
 	}
-	
-	public boolean getAlarmed()
-	{
+
+	public boolean getAlarmed() {
 		return isAlarmed;
 	}
-	
-	public Date getClock() 
-	{
+
+	public Date getClock() {
 		return clock;
 	}
 
-	public void setClock(Date clock) 
-	{
+	public void setClock(Date clock) {
 		this.clock = clock;
 	}
 
-	public Date getToday()
-	{
+	public Date getToday() {
 		return today;
 	}
-	
-	public void setToday(Date today)
-	{
+
+	public void setToday(Date today) {
 		this.today = today;
 	}
-	
-	public TimeZone getTimeZone()
-	{
+
+	public TimeZone getTimeZone() {
 		return z;
 	}
-	
-	public void setTimeZone(TimeZone z)
-	{
+
+	public void setTimeZone(TimeZone z) {
 		this.z = z;
 	}
-	
-	public static void main(String args[]) throws ParseException, IOException
-	{
+
+	public static void main(String args[]) throws ParseException, IOException {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		new CalendarFrame().setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }
-
-
-
